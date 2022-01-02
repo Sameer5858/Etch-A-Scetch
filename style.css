@@ -1,0 +1,19 @@
+html,
+body {
+  box-sizing: border-box;
+}
+#container {
+  display: flex;
+  height: 512px;
+  width: 512px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#container div {
+  height: 32px;
+  width: 32px;
+}
+.hov {
+  background-color: black;
+}
