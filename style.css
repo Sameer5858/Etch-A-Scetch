@@ -1,19 +1,38 @@
 html,
 body {
   box-sizing: border-box;
+  background-color: turquoise;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#header {
+  font-size: 48px;
+  color: white;
+}
+button {
+  height: 40px;
+  width: 150px;
+  font-size: 18px;
+  background-color: #ff717e;
+  border-color: #ff717e;
+  border-radius: 10px;
+  padding: auto;
+  margin: 50px auto 20px auto;
 }
 #container {
-  display: flex;
-  height: 512px;
-  width: 512px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  height: 500px;
+  width: 500px;
+  background-color: white;
+  border: solid #00ff00;
+  border-radius: 1px;
 }
 #container div {
-  height: 32px;
-  width: 32px;
 }
 .hov {
-  background-color: black;
+  background-color: #ff717e;
+  border: ;
+  border-radius: 1px;
 }
