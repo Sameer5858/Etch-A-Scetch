@@ -1,6 +1,6 @@
 const container = document.getElementById("container");
 const clearBtn = document.querySelector("button");
-
+const checkBox = document.getElementById("rainbow");
 let size = 16;
 makeGrid(size);
 clearBtn.addEventListener("click", () => {
@@ -39,6 +39,16 @@ function removeHov() {
     hov.classList.remove("hov");
   });
 }
+function randomRgb() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  return `rgb(${r},${g},${b})`;
+}
 container.addEventListener("mouseover", (e) => {
-  e.target.classList.add("hov");
+  if (checkBox.checked == true && e.target !== container) {
+    e.target.setAttribute("style", `background-color:${randomRgb()}`);
+  } else if (checkBox.checked == false && e.target !== container) {
+    e.target.setAttribute("style", " background-color: #ff717e;");
+  }
 });
