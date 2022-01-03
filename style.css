@@ -23,6 +23,10 @@ button {
   margin: 50px auto 20px auto;
   font-family: inherit;
 }
+.button {
+  display: flex;
+  gap: 50px;
+}
 #container {
   display: grid;
   height: 500px;

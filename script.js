@@ -1,9 +1,10 @@
 const container = document.getElementById("container");
-const clearBtn = document.querySelector("button");
+const resetBtn = document.getElementById("reset");
+const clearBtn = document.getElementById("clear");
 const checkBox = document.getElementById("rainbow");
 let size = 16;
 makeGrid(size);
-clearBtn.addEventListener("click", () => {
+resetBtn.addEventListener("click", () => {
   size = prompt(
     "how many grids for each side? please enter a number between 0-100",
     16
@@ -13,7 +14,6 @@ clearBtn.addEventListener("click", () => {
   } else if (size > 100) {
     return alert("please enter a number between 0-100");
   } else {
-    removeHov();
     removeGrid();
     removeGrid();
     makeGrid(size);
@@ -33,10 +33,10 @@ function removeGrid() {
     grid.remove();
   });
 }
-function removeHov() {
-  const hovs = document.querySelectorAll(".hov");
-  hovs.forEach((hov) => {
-    hov.classList.remove("hov");
+clearBtn.addEventListener("click", () => clear());
+function clear() {
+  document.querySelectorAll(".grid").forEach((grid) => {
+    grid.removeAttribute("style");
   });
 }
 function randomRgb() {
