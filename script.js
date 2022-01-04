@@ -2,8 +2,11 @@ const container = document.getElementById("container");
 const resetBtn = document.getElementById("reset");
 const clearBtn = document.getElementById("clear");
 const checkBox = document.getElementById("rainbow");
+const colorPickerButton = document.getElementById("colorpickerbutton");
+const colorPicker = document.getElementById("colorpicker");
 let isClick = false;
 let size = 16;
+let colorSelected = "#ff717e";
 makeGrid(size);
 
 // function to create grids
@@ -45,6 +48,10 @@ function clear() {
     grid.removeAttribute("style");
   });
 }
+//gets color value from color picker when color picker button clicker and assign it to color selected
+colorPickerButton.addEventListener("click", () => {
+  colorSelected = colorPicker.value;
+});
 // add colors to grids when mouse is on click and hover upon the grids according
 container.addEventListener("mouseover", (e) => {
   if (checkBox.checked === true && isClick === true && e.target !== container) {
@@ -54,7 +61,7 @@ container.addEventListener("mouseover", (e) => {
     isClick === true &&
     e.target !== container
   ) {
-    e.target.setAttribute("style", " background-color: #ff717e;");
+    e.target.setAttribute("style", `background-color: ${colorSelected};`);
   }
 });
 // event when reset button is clicked reset the size to user inputted size adn delete old divs

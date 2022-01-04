@@ -48,4 +48,41 @@ button {
   border: solid #00ff00;
   border-radius: 1px;
   cursor: crosshair;
+  /* to stop the grids from being dragged so that it cant apply perma click*/
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+/* color picker*/
+.colorpicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+#colorpicker {
+  padding: 0;
+}
+#colorpickerbutton {
+  margin-top: 15px;
+  text-align: center;
+}
+input[type="color"] {
+  border: none;
+  -webkit-appearance: none;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
 }

@@ -12,13 +12,24 @@
     <div id="header">Etch-A-Scetch</div>
     <div class="instructions">Click and hover to draw</div>
     <div class="button">
-      <button id="reset">Reset</button>
-      <button id="clear">clear</button>
+      <button id="reset">Reset Size</button>
+      <button id="clear">Clear</button>
     </div>
     <div class="rainbow">
       <input type="checkbox" id="rainbow" name="rainbow" />
       <label>Rainbow</label>
     </div>
     <div id="container"></div>
+    <div class="colorpicker">
+      <div style="font-size: 24px">Custom color</div>
+      <input
+        type="color"
+        name="colorpicker"
+        value="#ff717e"
+        class="colorpicker"
+        id="colorpicker"
+      />
+      <button id="colorpickerbutton">Apply Color</button>
+    </div>
   </body>
 </html>
