@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 const resetBtn = document.getElementById("reset");
 const clearBtn = document.getElementById("clear");
 const checkBox = document.getElementById("rainbow");
+let isClick = false;
 let size = 16;
 makeGrid(size);
 resetBtn.addEventListener("click", () => {
@@ -45,10 +46,21 @@ function randomRgb() {
   let b = Math.floor(Math.random() * 256);
   return `rgb(${r},${g},${b})`;
 }
+window.addEventListener("mousedown", () => {
+  isClick = true;
+});
+window.addEventListener("mouseup", () => {
+  isClick = false;
+});
 container.addEventListener("mouseover", (e) => {
-  if (checkBox.checked == true && e.target !== container) {
+  if (checkBox.checked === true && isClick === true && e.target !== container) {
     e.target.setAttribute("style", `background-color:${randomRgb()}`);
-  } else if (checkBox.checked == false && e.target !== container) {
+  } else if (
+    checkBox.checked === false &&
+    isClick === true &&
+    e.target !== container
+  ) {
     e.target.setAttribute("style", " background-color: #ff717e;");
   }
 });
+const colorPicker = document.getElementById("colorpicker");
